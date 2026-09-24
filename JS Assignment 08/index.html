@@ -1,113 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JS Assignment 08</title>
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Assignment 08</title>
 
-body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #6C63FF, #4A90E2);
-  min-height: 100vh;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  padding-top: 60px;
-}
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-.container {
-  background: white;
-  width: 90%;
-  max-width: 420px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  padding: 30px;
-  height: fit-content;
-}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-h1 {
-  text-align: center;
-  color: #333;
-  margin-top: 0;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6c63ff, #4a90e2);
+            min-height: 100vh;
+            margin: 0;
+            padding-top: 60px;
+        }
 
-.input-row {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
+        .container {
+            width: 90%;
+            max-width: 420px;
+            margin: auto;
+            padding: 25px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px #0003;
+        }
 
-#taskInput {
-  flex: 1;
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid #ddd;
-  border-radius: 6px;
-  outline: none;
-}
+        h1 {
+            text-align: center;
+            color: #333;
+        }
 
-#addBtn {
-  padding: 10px 16px;
-  font-size: 16px;
-  background: #6C63FF;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
+        .input-row,
+        .buttons {
+            display: flex;
+            gap: 8px;
+        }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+        }
 
-li {
-  display: flex;
-  align-items: center;
-  background: #f7f7fb;
-  padding: 12px;
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
+        .input-row input {
+            flex: 1;
+        }
 
-li span {
-  flex: 1;
-  margin-left: 10px;
-  font-size: 16px;
-  color: #333;
-}
+        button {
+            padding: 10px 14px;
+            border: 0;
+            border-radius: 6px;
+            background: #6c63ff;
+            color: white;
+            cursor: pointer;
+        }
 
-.completed-text {
-  text-decoration: line-through;
-  color: #aaa;
-}
+        #searchInput {
+            margin: 15px 0;
+        }
 
-.delete-btn {
-  background: #ff5c5c;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 6px 10px;
-  cursor: pointer;
-}
+        ul {
+            list-style: none;
+            padding: 0;
+        }
 
-</style>
+        li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: #f7f7fb;
+            border-radius: 6px;
+        }
+
+        .task-text {
+            flex: 1;
+            cursor: pointer;
+        }
+
+        .done {
+            text-decoration: line-through;
+            color: #aaa;
+        }
+
+        .edit {
+            background: #4a90e2;
+        }
+
+        .delete {
+            background: #ff5c5c;
+        }
+    </style>
 </head>
+
 <body>
 
-  <div class="container">
-    <h1>My Todo List</h1>
+    <div class="container">
 
-    <div class="input-row">
-      <input type="text" id="taskInput" placeholder="Add a new task...">
-      <button id="addBtn" onclick="addTask()">Add</button>
+        <h1>Todo App</h1>
+
+        <div class="input-row">
+            <input id="taskInput" placeholder="Add a new task">
+            <button id="addBtn">Add</button>
+        </div>
+
+        <input id="searchInput" placeholder="Search task...">
+
+        <ul id="taskList"></ul>
+
     </div>
 
-    <ul id="taskList"></ul>
-  </div>
-  <script src="./app.js"></script>
+    <script src="./app.js"></script>
 
 </body>
 </html>
